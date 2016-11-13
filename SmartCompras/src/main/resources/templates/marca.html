@@ -107,11 +107,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="marca : ${marcaList}" >
+					<tr th:each="marca : ${marcaList}">
 						<td th:text="${marca.id}"></td>
 						<td th:text="${marca.marca}"></td>
-						<td class="coluna"><a class="btn btn-danger btn-xs" href="delMarca?id=${marca.id}">Excluir</a></td>
-						
+						<td class="coluna"><button class="btn btn-danger btn-sm"
+								type="submit" th:value="*{marca.id}" name="removerMarca">
+								Excluir</button></td>
+
 					</tr>
 				</tbody>
 			</table>
