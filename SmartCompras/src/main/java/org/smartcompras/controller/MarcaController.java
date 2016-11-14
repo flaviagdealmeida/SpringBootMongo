@@ -44,7 +44,6 @@ public class MarcaController {
 
 		marcaRepository.delete(marcaId);
 
-		System.out.println(marcaId);
 		return "redirect:marca";
 	}
 
