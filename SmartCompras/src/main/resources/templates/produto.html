@@ -96,11 +96,7 @@
 				<label for="marca" class="control-label">Marca</label> 
 	
 				
-				<input list="marca" name="marca" class="form-control" />
-				<datalist id="marca">
-					<option th:each="marca : ${marcaList}" th:value="${marca}"
-						th:text="${marca.marca}"> </option>
-				</datalist>
+			
 
 
 			</p>
@@ -111,7 +107,7 @@
 					<option>Cereais</option>
 					<option>Bebidas</option>
 					<option>Higiene</option>
-					<option>Congelado</option>
+					<option>Congelados</option>
 					<option>Limpeza</option>
 				</select>
 

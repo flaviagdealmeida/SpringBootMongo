@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.smartcompras.model.Marca;
+
 import org.smartcompras.model.Produto;
 import org.smartcompras.repository.ProdutoMongoRepository;
 
@@ -21,6 +21,12 @@ public class ProdutoController {
 
 	@Autowired
 	ProdutoMongoRepository produtoRepository;
+	
+	@RequestMapping("produto")
+	public String produto() {
+		return "produto";
+	}
+	
 	
 	@RequestMapping(value="/addprodutos", method=RequestMethod.POST)
 	public String addmarcas(@ModelAttribute Produto produto){
@@ -34,12 +40,12 @@ public class ProdutoController {
         return "redirect:produto";
     }
 	
-	@RequestMapping("/produto")
-    public String produto(Model model) {
-        model.addAttribute("produtoList", produtoRepository.findAll());
-        return "redirect:produto";
-    }
-	
+//	@RequestMapping("/produto")
+//    public String produtoListar(Model model) {
+//       model.addAttribute("produtoList", produtoRepository.findAll());
+//        return "redirect:produto";
+//    }
+////	
 	@RequestMapping(value = "/delprod", params = { "removerProduto" }, method = RequestMethod.POST)
 
 	public String delMarca(@ModelAttribute Produto produto, final HttpServletRequest req) {
